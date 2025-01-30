@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="94">
+    <author>Kamikater</author>
+    <version>0.0.9.0</version>
+
+    <title>
+        <en>Automatic Shipping Of Animal Products</en>
+        <de>Automatischer Versand Von Tierprodukten</de>
+		<fr>Expédition Automatique De Produits D'Origine Animale</fr>
+		<ru>Автодоставка Продуктов Животноводства</ru>
+    </title>
+
+    <description>
+        <en>
+ <![CDATA[Expand your stables with a production so that you can automatically ship ('Distributing' or 'Selling') the goods.
+ 
+ To do this, position the trigger areas on top of each other.
+ 
+ Each building can hold up to 5000L internally. 
+ Price per building: 500€
+]]>
+        </en>
+        <de>
+<![CDATA[Erweitere deine Ställe um eine Produktion, damit du die Ware automatisch verschicken ('Verteilen' oder 'Verkaufen') kannst.
+
+Positioniere dazu die Trigger-Flächen übereinander. 
+
+Jedes Gebäude kann intern bis zu 5000L Zwischenlager.
+Preis je Gebäude: 500€
+]]>
+        </de>
+        <fr>
+ <![CDATA[Agrandissez vos écuries avec une production afin de pouvoir expédier automatiquement ('Distribuer' ou 'Vendre') les marchandises.
+
+Pour ce faire, positionnez les zones de déclenchement les unes sur les autres.
+
+Chaque bâtiment peut contenir jusqu'à 5.000L en interne.
+Prix ​​par bâtiment : 500€
+]]>
+        </fr>
+		<ru>
+ <![CDATA[Расширьте свои конюшни с помощью производства, чтобы вы могли автоматически отправлять («Распределять» или «Продавать») товары.
+
+Для этого расположите триггерные зоны друг над другом.
+
+Каждое здание может вмещать до 5000 л внутри.
+Цена за здание: 500 €
+]]>
+		</ru>
+    </description>
+
+    <iconFilename>icon_AnimalProductsAS.dds</iconFilename>
+
+    <multiplayer supported="true" />
+
+    <l10n>
+        <text name="storeItem_AP_AS_Bee"> 
+			<en>honey shipping</en>
+			<de>Honig Versand</de>
+			<fr>expédition de miel</fr>
+			<ru>Доставка мёда</ru>
+        </text>
+        <text name="storeItem_AP_AS_Chicken"> 
+			<en>egg shipping</en>
+			<de>Ei Versand</de>
+			<fr>expédition d'œufs</fr>
+			<ru>Доставка яиц</ru>
+        </text>
+        <text name="storeItem_AP_AS_Sheep"> 
+			<en>wool shipping</en>
+			<de>Wolle Versand</de>
+			<fr>expédition de laine</fr>
+			<ru>Доставка шерсти</ru>
+        </text>
+		
+		<text name="function_autoShipping">
+			<en>Place this Production in a Stable's Pallet Slot. Then you can send your products directly.</en>
+			<de>Setzten Sie diese Produktion auf den Pallettenplatz Ihres Stalles. Dann können Sie Ihre Produkte direkt versenden.</de>
+			<fr>Placez cette production dans l'emplacement de palette d'une étable. Vous pourrez alors envoyer vos produits directement.</fr>
+			<ru>Разместите это производство на площадке для поддонов вашего загона для животных. Тогда вы сможете отправлять свои товары напрямую.</ru>
+		</text>
+		<text name="function_autoShipping2">
+			<en>Place this Production near your Stable. Then you can transfer and send your products directly.</en>
+			<de>Setzten Sie diese Produktion in die Nähe Ihres Stalles. Dann können Sie Ihre Produkte umladen und direkt versenden.</de>
+			<fr>Placez cette production à proximité de votre étable. Vous pourrez alors transférer et envoyer vos produits directement.</fr>
+			<ru>Разместите это производство рядом со своим коровником. Затем вы можете перегрузить молоко в подходящий транспорт/цистерну.</ru>
+		</text>
+    </l10n>
+
+    <storeItems>
+        <storeItem xmlFilename="AP_AS_Bee.xml" />
+        <storeItem xmlFilename="AP_AS_Chicken.xml" />
+        <storeItem xmlFilename="AP_AS_Sheep.xml" />
+    </storeItems>
+    
+</modDesc>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable type="productionPoint" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../shared/xml/schema/placeable.xsd">
+    <storeData>
+        <name>$l10n_storeItem_AP_AS_Sheep</name>
+        <functions>
+            <function>$l10n_function_autoShipping</function>
+        </functions>
+        <image>store_AnimalProductsAS.dds</image>
+        <price>500</price>
+        <dailyUpkeep>0</dailyUpkeep>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>NONE</brand>
+        <species>placeable</species>
+        <category>animalpens</category>
+        <brush>
+            <type>placeable</type>
+            <category>animals</category>
+            <tab>sheeps</tab>
+        </brush>
+        <canBeSold>true</canBeSold>
+        <showInStore>true</showInStore>
+    </storeData>
+
+    <base>
+        <filename>AnimalProducts_AutoShipping.i3d</filename>
+        <canBeRenamed>true</canBeRenamed>
+    </base>
+
+    <placement useRandomYRotation="false" useManualYRotation="true" >
+        <testAreas>
+            <testArea startNode="testArea1Start" endNode="testArea1End" />
+        </testAreas>
+        <sounds>
+            <place template="smallImp"/>
+        </sounds>
+    </placement>
+
+    <clearAreas>
+        <clearArea startNode="clearArea1Start" widthNode="clearArea1Width" heightNode="clearArea1Height"/>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="1" maxSlope="75" maxEdgeAngle="30">
+        <levelAreas>
+            <levelArea startNode="levelArea1Start" widthNode="levelArea1Width" heightNode="levelArea1Height"/>
+        </levelAreas>
+    </leveling>
+
+    <indoorAreas />
+
+    <tipOcclusionUpdateAreas>
+        <tipOcclusionUpdateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+    </tipOcclusionUpdateAreas>
+
+    <ai>
+        <updateAreas>
+            <updateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+        </updateAreas>
+    </ai>
+	
+	<triggerMarkers>
+        <triggerMarker node="warningStripes_in" adjustToGround="true" groundOffset="0.01" />
+        <triggerMarker node="warningStripes_out" adjustToGround="true" groundOffset="0.01" />
+        <triggerMarker node="playerTriggerMarker" filename="$data/shared/assets/marker/markerIconWrench.i3d" adjustToGround="true"/>
+	</triggerMarkers>
+
+    <!-- <infoTrigger triggerNode="infoTrigger"/> -->
+
+    <hotspots>
+        <hotspot type="PRODUCTION_POINT" linkNode="unloadTriggerMarker" teleportNode="playerTriggerMarker" />
+    </hotspots>
+	
+    <productionPoint>
+        <productions>
+            <production id="wool" name="$l10n_fillType_wool" cyclesPerHour="1" costsPerActiveHour="0">
+                <inputs>
+                    <input fillType="WOOL" amount="1" />
+                </inputs>
+                <outputs>
+                    <output fillType="WOOL" amount="1" />
+                </outputs>
+            </production>
+            <production id="goatmilk" name="$l10n_fillType_goatMilk" cyclesPerHour="1" costsPerActiveHour="0">
+                <inputs>
+                    <input fillType="GOATMILK" amount="1" />
+                </inputs>
+                <outputs>
+                    <output fillType="GOATMILK" amount="1" />
+                </outputs>
+            </production>
+        </productions>
+
+        <storage isExtension="true" fillLevelSyncThreshold="50">
+            <capacity fillType="WOOL"   capacity="5000" />
+            <capacity fillType="GOATMILK"   capacity="5000" />
+        </storage>
+
+        <sellingStation node="sellingStation" supportsExtension="false" hideFromPricesMenu="true" allowMissions="false">
+            <unloadTrigger exactFillRootNode="exactFillRootNode" fillTypes="WOOL GOATMILK"/>
+            <palletTrigger triggerNode="unloadTrigger" fillTypes="WOOL GOATMILK"/>
+        </sellingStation>
+
+        <palletSpawner node="palletSpawner">
+            <spawnPlaces>
+                <spawnPlace startNode="spawnPlace1Start" />
+            </spawnPlaces>
+        </palletSpawner>
+
+        <playerTrigger node="playerTrigger" />
+    </productionPoint>
+
+    <i3dMappings>
+        <i3dMapping id="clearArea1Start" node="0>0|0" />
+        <i3dMapping id="clearArea1Width" node="0>0|0|0" />
+        <i3dMapping id="clearArea1Height" node="0>0|0|1" />
+        <i3dMapping id="levelArea1Start" node="0>1|0" />
+        <i3dMapping id="levelArea1Width" node="0>1|0|0" />
+        <i3dMapping id="levelArea1Height" node="0>1|0|1" />
+        <i3dMapping id="testArea1Start" node="0>2|0" />
+        <i3dMapping id="testArea1End" node="0>2|0|0" />
+        <i3dMapping id="tipOcclusionUpdateArea1Start" node="0>3|0" />
+        <i3dMapping id="tipOcclusionUpdateArea1End" node="0>3|0|0" />
+        <i3dMapping id="warningStripes_in" node="0>7" />
+        <i3dMapping id="sellingStation" node="0>8" />
+        <i3dMapping id="unloadTrigger" node="0>8|0" />
+        <i3dMapping id="unloadTriggerMarker" node="0>8|0|0" />
+        <i3dMapping id="exactFillRootNode" node="0>8|2" />
+        <i3dMapping id="warningStripes_out" node="0>9" />
+        <i3dMapping id="palletSpawner" node="0>10" />
+        <i3dMapping id="spawnPlace1Start" node="0>10|0" />
+        <i3dMapping id="playerTrigger" node="0>11|0" />
+        <i3dMapping id="playerTriggerMarker" node="0>11|0|0" />
+        <i3dMapping id="infoTrigger" node="0>14" />
+    </i3dMappings>
+</placeable>

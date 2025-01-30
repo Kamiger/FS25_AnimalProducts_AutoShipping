@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="AnimalProducts_AutoShipping.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.3"/>
+  </Asset>
+
+  <Files>
+    <File fileId="7" filename="$data/maps/textures/shared/props/icicles_diffuse.png"/>
+    <File fileId="8" filename="$data/maps/textures/shared/props/icicles_normal.png"/>
+    <File fileId="9" filename="$data/maps/textures/shared/props/icicles_specular.png"/>
+    <File fileId="2" filename="$data/maps/textures/shared/snow_diffuse.png"/>
+    <File fileId="3" filename="$data/maps/textures/shared/snow_normal.png"/>
+    <File fileId="4" filename="$data/maps/textures/shared/snow_specular.png"/>
+    <File fileId="10" filename="$data/placeables/brandless/gardenSheds/level03/gardenShed03_diffuse.png"/>
+    <File fileId="11" filename="$data/placeables/brandless/gardenSheds/level03/gardenShed03_normal.png"/>
+    <File fileId="12" filename="$data/placeables/brandless/gardenSheds/level03/gardenShed03_specular.png"/>
+    <File fileId="15" filename="$data/placeables/brandless/gardenSheds/shared/glass_diffuse.png"/>
+    <File fileId="17" filename="$data/placeables/brandless/gardenSheds/shared/glass_specular.png"/>
+    <File fileId="13" filename="$data/shaders/placeableShader.xml"/>
+    <File fileId="5" filename="$data/shaders/snowHeapShader.xml"/>
+    <File fileId="16" filename="$data/shared/default_normal.png"/>
+    <File fileId="19" filename="$data/shared/warningStripes_diffuse.dds"/>
+    <File fileId="20" filename="$data/shared/warningStripes_normal.dds"/>
+    <File fileId="21" filename="$data/shared/warningStripes_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="gardenShed03_mat" materialId="5" customShaderId="13">
+      <Texture fileId="10"/>
+      <Normalmap fileId="11"/>
+      <Glossmap fileId="12"/>
+    </Material>
+    <Material name="glass_mat" materialId="6" alphaBlending="true">
+      <Texture fileId="15"/>
+      <Normalmap fileId="16"/>
+      <Glossmap fileId="17"/>
+    </Material>
+    <Material name="icicles_mat" materialId="7" alphaBlending="true" customShaderId="5" customShaderVariation="icicle">
+      <Texture fileId="7"/>
+      <Normalmap fileId="8"/>
+      <Glossmap fileId="9"/>
+      <Refractionmap coeff="1" bumpScale="0.1" withSSRData="false"/>
+    </Material>
+    <Material name="lambert1" materialId="8" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="lambert1" materialId="9" diffuseColor="0.498039 0.498039 0.498039 1">
+    </Material>
+    <Material name="lambert1" materialId="10" diffuseColor="0.501961 0.501961 0.501961 1">
+    </Material>
+    <Material name="pasted__snow_mat" materialId="11" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3" bumpDepth="0.5"/>
+      <Glossmap fileId="4"/>
+    </Material>
+    <Material name="warningStripes_mat" materialId="12">
+      <Texture fileId="19"/>
+    </Material>
+    <Material name="warningStripes_mat" materialId="13">
+      <Texture fileId="19"/>
+      <Normalmap fileId="20"/>
+      <Glossmap fileId="21"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="AnimalProducts_AutoShipping.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="AnimalProducts_AutoShipping" nodeId="26">
+      <TransformGroup name="clearAreas" translation="3 0 0" nodeId="27">
+        <TransformGroup name="clearArea1Start" translation="-1.1 0 -2.5" nodeId="28">
+          <TransformGroup name="clearArea1Width" translation="-6.66134e-16 0 5.5" nodeId="29"/>
+          <TransformGroup name="clearArea1Height" translation="2.3 0 7.77156e-15" nodeId="30"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="levelAreas" translation="3 0 0" nodeId="31">
+        <TransformGroup name="levelArea1Start" translation="-8 0 -3" nodeId="32">
+          <TransformGroup name="levelArea1Width" translation="-6.66134e-16 0 7" nodeId="33"/>
+          <TransformGroup name="levelArea1Height" translation="10 0 7.77156e-15" nodeId="34"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="testAreas" translation="3 0 0" nodeId="35">
+        <TransformGroup name="testArea1Start" translation="-1.1 0 -2.5" nodeId="36">
+          <TransformGroup name="testArea1End" translation="2.28026 2.726 5.5" nodeId="37"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="tipOcclusionUpdateAreas" translation="3 0 0" nodeId="38">
+        <TransformGroup name="tipOcclusionUpdateArea1Start" translation="-1.1 0 -2" nodeId="39">
+          <TransformGroup name="tipOcclusionUpdateArea1End" translation="2.3 0 5.5" nodeId="40"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="tipCollision" translation="3 0 0" nodeId="41">
+        <Shape name="tipCollision" translation="0 0 -7.60956e-17" shapeId="1" visibility="false" static="true" collisionFilterGroup="0x8" collisionFilterMask="0x1" clipDistance="300" nodeId="42" castsShadows="true" receiveShadows="true" materialIds="8"/>
+      </TransformGroup>
+      <TransformGroup name="visuals" translation="3 0 0" nodeId="43">
+        <TransformGroup name="winter" nodeId="44" weatherRequiredMask="0x400">
+          <Shape name="snow" shapeId="2" clipDistance="150" nodeId="45" castsShadows="true" receiveShadows="true" materialIds="11"/>
+          <Shape name="icicles" translation="1.03999 2.00926 -1.09433" shapeId="3" clipDistance="50" nodeId="46" castsShadows="true" receiveShadows="true" materialIds="7"/>
+          <Shape name="icicles1" translation="-1.03798 2.00926 1.00728" shapeId="3" clipDistance="50" nodeId="47" castsShadows="true" receiveShadows="true" materialIds="7"/>
+        </TransformGroup>
+        <Shape name="gardenShed03Vis" shapeId="4" clipDistance="150" nodeId="48" castsShadows="true" receiveShadows="true" materialIds="5"/>
+        <Shape name="glass" shapeId="5" clipDistance="30" nodeId="49" castsShadows="true" receiveShadows="true" materialIds="6"/>
+      </TransformGroup>
+      <TransformGroup name="collisions" translation="3 0 0" nodeId="50">
+        <Shape name="collision" shapeId="6" static="true" collisionFilterGroup="0x3e" collisionFilterMask="0xfffffbff" nodeId="51" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="10"/>
+      </TransformGroup>
+      <TransformGroup name="warningStripes_in" translation="-2 0 0" nodeId="52">
+        <TransformGroup name="markerEggs_in" rotation="0 -90 0" nodeId="53">
+          <Shape name="warningStripesCorner" translation="-2.6 -1.00044e-11 2.75" rotation="-1.16744e-06 90 0" shapeId="7" clipDistance="200" nodeId="54" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="13"/>
+          <Shape name="warningStripesCorner" translation="2.6 -3.1589e-06 2.75" rotation="180 -1.06816e-05 -180" shapeId="7" clipDistance="200" nodeId="55" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="12"/>
+          <Shape name="warningStripesCorner" translation="2.6 -2.64291e-06 -2.75" rotation="3.15619e-06 -90 0" shapeId="7" clipDistance="200" nodeId="56" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="13"/>
+          <Shape name="warningStripesCorner" translation="-2.6 0 -2.75" rotation="-3.46703e-06 0 0" shapeId="7" clipDistance="200" nodeId="57" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="13"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="sellingStation" translation="-2 0 0" nodeId="58">
+        <Shape name="unloadTrigger" translation="0 -0.3 0" shapeId="8" kinematic="true" compound="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x10000" nodeId="59" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="8">
+          <TransformGroup name="unloadTriggerMarker" nodeId="60"/>
+        </Shape>
+        <TransformGroup name="unloadTriggerAINode" rotation="0 85 0" nodeId="61"/>
+        <Shape name="exactFillRootNode" translation="0 -0.3 0" shapeId="8" kinematic="true" compound="true" collisionFilterGroup="0x40000000" collisionFilterMask="0x20000000" nodeId="62" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="8"/>
+      </TransformGroup>
+      <TransformGroup name="warningStripes_out" translation="3 0 0" nodeId="63">
+        <TransformGroup name="markerEggs_out" translation="0.7 0 1.86" rotation="0 -90 0" nodeId="64">
+          <Shape name="warningStripesCorner" rotation="-3.46703e-06 0 0" shapeId="7" clipDistance="200" nodeId="65" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="13"/>
+          <Shape name="warningStripesCorner" translation="1.1 -2.64291e-06 0" rotation="3.15619e-06 -90 0" shapeId="7" clipDistance="200" nodeId="66" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="13"/>
+          <Shape name="warningStripesCorner" translation="1.1 -3.1589e-06 1.5" rotation="180 -1.06816e-05 -180" shapeId="7" clipDistance="200" nodeId="67" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="12"/>
+          <Shape name="warningStripesCorner" translation="-1.55898e-05 -1.00044e-11 1.5" rotation="-1.16744e-06 90 0" shapeId="7" clipDistance="200" nodeId="68" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="13"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="palletSpawner" translation="2.25 0 2" nodeId="69">
+        <TransformGroup name="spawnPlace1Start" translation="0 0 0.4" nodeId="70">
+          <TransformGroup name="spawnPlace1End" translation="1 0 0" nodeId="71"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="productionPoint" translation="3 0 -2.5" nodeId="72">
+        <Shape name="playerTrigger" shapeId="9" static="true" trigger="true" collisionFilterGroup="0x300000" collisionFilterMask="0x300000" clipDistance="600" nodeId="73" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="8">
+          <TransformGroup name="playerTriggerMarker" nodeId="74"/>
+        </Shape>
+      </TransformGroup>
+      <TransformGroup name="loadingArea" nodeId="75">
+        <Shape name="loadingTrigger" translation="5 2 0" scale="0.5 0.5 0.5" shapeId="10" static="true" trigger="true" collisionFilterGroup="0x40000000" collisionFilterMask="0x40000000" nodeId="76" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="9"/>
+        <TransformGroup name="loadingTriggerAINode" translation="5 0 0" rotation="0 175 0" nodeId="77"/>
+        <TransformGroup name="loadingTriggerMarker" translation="5 0 0" nodeId="78"/>
+      </TransformGroup>
+      <TransformGroup name="storage" nodeId="79"/>
+      <Shape name="infoTrigger" scale="0.5 1 0.5" shapeId="11" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x100000" nodeId="80" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="10"/>
+    </TransformGroup>
+  </Scene>
+
+</i3D>
