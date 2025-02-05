@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="94">
+<modDesc descVersion="95">
     <author>Kamikater</author>
-    <version>0.0.9.0</version>
+    <version>0.0.10.0</version>
 
     <title>
         <en>Automatic Shipping Of Animal Products</en>
@@ -17,7 +17,7 @@
  To do this, position the trigger areas on top of each other.
  
  Each building can hold up to 5000L internally. 
- Price per building: 500€
+ Price per building: 500$
 ]]>
         </en>
         <de>
